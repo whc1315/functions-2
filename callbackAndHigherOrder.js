@@ -7,6 +7,8 @@
 
 // CODE HERE
 
+const  multiply = (num1, num2, func) => func(num1 * num2)
+
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -37,6 +39,8 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 
+const first = (arr, func) => func(arr[0])
+
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -56,6 +60,8 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+
+const last = (arr, func) => func(arr[arr.length -1])
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -79,6 +85,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 
+const contains = (arr, name, func) => func(arr.includes(name))
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -103,6 +110,32 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+
+function uniq (arr, cb) {
+//console.log(arr)
+  for(let i = 0; i < arr.length; i++) {
+    
+    for(let j = arr.length - 1; j > i; j--) {
+
+      if(arr[i] === arr[j]) {
+        
+        arr.splice(j, 1)
+      }
+    }
+  }
+  cb(arr)
+} 
+
+function printIt(arr) {
+  console.log('New array: ')
+  console.log(arr);
+}
+
+
+// uniq(names, printIt)
+
+
+
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
