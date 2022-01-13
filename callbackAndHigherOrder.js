@@ -157,6 +157,13 @@ function printIt(arr) {
 
 // CODE HERE 
 
+// const each = (arr, cb) =>  arr.forEach((el, i) => cb(el, i))
+
+function each(arr, cb) {
+  arr.forEach(function(el, i){
+    return cb(el, i)
+  });
+}
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -166,6 +173,8 @@ function printIt(arr) {
 */
 
 // CODE HERE
+
+// each(names, (item, index) => console.log(`The item at index ${index} is ${item}`))
 
 
 ////////// PROBLEM 7 //////////
@@ -200,14 +209,24 @@ var users = [
 
 // CODE HERE 
 
+//  function getUserById (arr, id, cb) {
+//    for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].id === id) {
+//             return cb(arr[i])
+//         }
+//     }
+// }
+
+  //one line with ternary
+  const getUserById = (arr, id, cb) => arr.forEach(elem => elem.id === id ? cb(elem) : null)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
